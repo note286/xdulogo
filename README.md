@@ -136,39 +136,39 @@ copy org\西电新标志3.jpg .
 copy org\西电新标志4.jpg .
 rem 校正红色和黑色
 rem 大约不是白色的填充为西电红 接着不是西电红的全部填充为白色
-convert 西电新标志1.jpg -fuzz 30% -fill "#AF2125" +opaque white -fill white +opaque "#AF2125" 西电新标志1-红色-不透明.png
+convert 西电新标志1.jpg -fuzz 30% -fill "#AF2125" +opaque white -fill white +opaque "#AF2125" -define png:exclude-chunks=date,time 西电新标志1-红色-不透明.png
 rem 先处理左区域 再处理右区域
 rem 左区域大约不是白色的填充为西电红 接着不是西电红的全部填充为白色
 convert 西电新标志2.jpg -region 750x800+0+0 -fuzz 30% -fill "#AF2125" +opaque white -fill white +opaque "#AF2125" 西电新标志2-红色-黑色-不透明-临时.png
 rem 右区域大约不是白色的填充为黑色 接着不是黑色的全部填充为白色
-convert 西电新标志2-红色-黑色-不透明-临时.png -region 1800x800+740+0 -fuzz 30% -fill black +opaque white -fill white +opaque black 西电新标志2-红色-黑色-不透明.png
+convert 西电新标志2-红色-黑色-不透明-临时.png -region 1800x800+740+0 -fuzz 30% -fill black +opaque white -fill white +opaque black -define png:exclude-chunks=date,time 西电新标志2-红色-黑色-不透明.png
 del 西电新标志2-红色-黑色-不透明-临时.png
 rem 先处理上区域 再处理下区域
 rem 上区域大约不是白色的填充为西电红 接着不是西电红的全部填充为白色
 convert 西电新标志3.jpg -region 1800x1050+0+0 -fuzz 30% -fill "#AF2125" +opaque white -fill white +opaque "#AF2125" 西电新标志3-红色-黑色-不透明-临时.png
 rem 下区域大约不是白色的填充为黑色 接着不是黑色的全部填充为白色
-convert 西电新标志3-红色-黑色-不透明-临时.png -region 1800x800+0+1000 -fuzz 30% -fill black +opaque white -fill white +opaque black 西电新标志3-红色-黑色-不透明.png
+convert 西电新标志3-红色-黑色-不透明-临时.png -region 1800x800+0+1000 -fuzz 30% -fill black +opaque white -fill white +opaque black -define png:exclude-chunks=date,time 西电新标志3-红色-黑色-不透明.png
 del 西电新标志3-红色-黑色-不透明-临时.png
 rem 大约不是白色的填充为黑色 接着不是黑色的全部填充为白色
-convert 西电新标志4.jpg -fuzz 30% -fill black +opaque white -fill white +opaque black 西电新标志4-黑色-不透明.png
+convert 西电新标志4.jpg -fuzz 30% -fill black +opaque white -fill white +opaque black -define png:exclude-chunks=date,time 西电新标志4-黑色-不透明.png
 rem 移除白底
-magick convert 西电新标志1-红色-不透明.png -fuzz 30% -transparent white 西电新标志1-红色-透明.png
-magick convert 西电新标志2-红色-黑色-不透明.png -fuzz 30% -transparent white 西电新标志2-红色-黑色-透明.png
-magick convert 西电新标志3-红色-黑色-不透明.png -fuzz 30% -transparent white 西电新标志3-红色-黑色-透明.png
-magick convert 西电新标志4-黑色-不透明.png -fuzz 30% -transparent white 西电新标志4-黑色-透明.png
+magick convert 西电新标志1-红色-不透明.png -fuzz 30% -transparent white -define png:exclude-chunks=date,time 西电新标志1-红色-透明.png
+magick convert 西电新标志2-红色-黑色-不透明.png -fuzz 30% -transparent white -define png:exclude-chunks=date,time 西电新标志2-红色-黑色-透明.png
+magick convert 西电新标志3-红色-黑色-不透明.png -fuzz 30% -transparent white -define png:exclude-chunks=date,time 西电新标志3-红色-黑色-透明.png
+magick convert 西电新标志4-黑色-不透明.png -fuzz 30% -transparent white -define png:exclude-chunks=date,time 西电新标志4-黑色-透明.png
 rem 替换为蓝色
-convert 西电新标志1-红色-不透明.png -fill "#004182" -opaque "#AF2125" 西电新标志1-蓝色-不透明.png
-convert 西电新标志2-红色-黑色-不透明.png -fill "#004182" -opaque "#AF2125" 西电新标志2-蓝色-黑色-不透明.png
-convert 西电新标志3-红色-黑色-不透明.png -fill "#004182" -opaque "#AF2125" 西电新标志3-蓝色-黑色-不透明.png
+convert 西电新标志1-红色-不透明.png -fill "#004182" -opaque "#AF2125" -define png:exclude-chunks=date,time 西电新标志1-蓝色-不透明.png
+convert 西电新标志2-红色-黑色-不透明.png -fill "#004182" -opaque "#AF2125" -define png:exclude-chunks=date,time 西电新标志2-蓝色-黑色-不透明.png
+convert 西电新标志3-红色-黑色-不透明.png -fill "#004182" -opaque "#AF2125" -define png:exclude-chunks=date,time 西电新标志3-蓝色-黑色-不透明.png
 rem 移除白底
-magick convert 西电新标志1-蓝色-不透明.png -transparent white 西电新标志1-蓝色-透明.png
-magick convert 西电新标志2-蓝色-黑色-不透明.png -transparent white 西电新标志2-蓝色-黑色-透明.png
-magick convert 西电新标志3-蓝色-黑色-不透明.png -transparent white 西电新标志3-蓝色-黑色-透明.png
+magick convert 西电新标志1-蓝色-不透明.png -transparent white -define png:exclude-chunks=date,time 西电新标志1-蓝色-透明.png
+magick convert 西电新标志2-蓝色-黑色-不透明.png -transparent white -define png:exclude-chunks=date,time 西电新标志2-蓝色-黑色-透明.png
+magick convert 西电新标志3-蓝色-黑色-不透明.png -transparent white -define png:exclude-chunks=date,time 西电新标志3-蓝色-黑色-透明.png
 rem 生成白色透明底素材
-magick convert 西电新标志1-红色-透明.png -fill white -opaque "#AF2125" -fill white -opaque black 西电新标志1-白色-透明.png
-magick convert 西电新标志2-红色-黑色-透明.png -fill white -opaque "#AF2125" -fill white -opaque black 西电新标志2-白色-透明.png
-magick convert 西电新标志3-红色-黑色-透明.png -fill white -opaque "#AF2125" -fill white -opaque black 西电新标志3-白色-透明.png
-magick convert 西电新标志4-黑色-透明.png -fill white -opaque black 西电新标志4-白色-透明.png
+magick convert 西电新标志1-红色-透明.png -fill white -opaque "#AF2125" -fill white -opaque black -define png:exclude-chunks=date,time 西电新标志1-白色-透明.png
+magick convert 西电新标志2-红色-黑色-透明.png -fill white -opaque "#AF2125" -fill white -opaque black -define png:exclude-chunks=date,time 西电新标志2-白色-透明.png
+magick convert 西电新标志3-红色-黑色-透明.png -fill white -opaque "#AF2125" -fill white -opaque black -define png:exclude-chunks=date,time 西电新标志3-白色-透明.png
+magick convert 西电新标志4-黑色-透明.png -fill white -opaque black -define png:exclude-chunks=date,time 西电新标志4-白色-透明.png
 rem 移除原始素材
 del 西电新标志1.jpg
 del 西电新标志2.jpg
