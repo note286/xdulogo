@@ -30,7 +30,7 @@
 
 # 项目名称
 
-xdulogo-Xidian University Postgraduate Logo
+xdulogo-Xidian University Logo
 
 西安电子科技大学校徽校
 
